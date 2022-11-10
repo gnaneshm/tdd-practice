@@ -17,15 +17,13 @@ class Money {
   }
 }
 
-let fiver = new Money(5, "USD");
-let tenner = fiver.times(2);
-let expectedMoneyAfterDivision = new Money(10, "USD");
-assert.deepStrictEqual(tenner, expectedMoneyAfterDivision);
+let fiveDollars = new Money(5, "USD");
+let tenDollars = new Money(10, "USD");
+assert.deepStrictEqual(fiveDollars.times(2), tenDollars);
 
 let tenEuros = new Money(10, "EUR");
-let twentyEuros = tenEuros.times(2);
-expectedMoneyAfterDivision = new Money(20, "EUR");
-assert.deepStrictEqual(twentyEuros, expectedMoneyAfterDivision);
+let twentyEuros = new Money(20, "EUR");
+assert.deepStrictEqual(tenEuros.times(2), twentyEuros);
 
 let originalMoney = new Money(4002, "KRW");
 let actualMoneyAfterDivision = originalMoney.divide(4);
