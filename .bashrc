@@ -1,0 +1,1 @@
+export TDD_PROJECT_ROOT=/Users/gnaneshm/Desktop/tdd-project
