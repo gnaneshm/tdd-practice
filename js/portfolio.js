@@ -7,11 +7,14 @@ export class Portfolio {
     this.moneys = this.moneys.concat(moneys);
   }
   convert(money, currency) {
-    let eurToUsd = 1.2;
     if (money.currency === currency) {
       return money.amount;
     }
-    return money.amount * eurToUsd;
+    let exchangeRates = new Map();
+    exchangeRates.set("EUR->USD", 1.2);
+    exchangeRates.set("USD->KRW", 1100);
+    let key = money.currency + "->" + currency;
+    return money.amount * exchangeRates.get(key);
   }
   evaluate(currency) {
     let total = this.moneys.reduce((sum, money) => {
